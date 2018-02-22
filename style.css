@@ -1,0 +1,79 @@
+body
+			{
+				/*background: #f9f9f9;*/
+				background: #FC5C7D;  /* fallback for old browsers */
+				background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
+				background: linear-gradient(to right, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+			}
+
+			#container
+			{
+				width: 700px;
+				margin:0 auto;
+			}
+
+			#chatWindow
+			{
+				height:450px;
+			}
+
+			#mainWrapper
+			{
+				display:none;
+				
+			}
+
+			#chatWrapper
+			{
+				float:left;
+				border: 5px black solid;
+				/*border-radius: 10px;*/
+				/*background: #f4f4f4;*/
+				background: #00b09b;  /* fallback for old browsers */
+				background: -webkit-linear-gradient(to right, #96c93d, #00b09b);  /* Chrome 10-25, Safari 5.1-6 */
+				background: linear-gradient(to right, #96c93d, #00b09b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+				padding: 10px;
+				width:350px;
+				margin-left: 20px;
+				/*height: 600px;*/
+				/*display:none;*/
+			}
+
+			#userWrapper
+			{
+				float:right;
+				/*border: 1px gray solid;*/
+				border: 5px black solid;
+				border-radius: 10px;
+				/*background: #f4f4f4;*/
+				background: #800080;  /* fallback for old browsers */
+				background: -webkit-linear-gradient(to right, #ffc0cb, #800080);  /* Chrome 10-25, Safari 5.1-6 */
+				background: linear-gradient(to right, #ffc0cb, #800080); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+				padding: 10px;
+				margin-left: 20px;
+				width: 250px;
+				height: 450px;
+				/*max-height: 600px;*/
+			}
+
+			#namesWrapper
+			{
+				float:left;
+				/*border: 1px gray solid;*/
+				background: #108dc7;
+				background: linear-gradient(to right, #108dc7, #ef8e38);
+				border: 10px black solid;
+				border-radius: 10px;
+				/*background: #f4f4f4;*/
+				padding: 10px;
+				width: 400px;
+				margin-left: 20px;
+				/*display:none;	*/
+			}
+
+			input
+			{
+				height:30px;
+				background: #E5CCFF;
+			}
