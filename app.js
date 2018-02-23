@@ -25,8 +25,9 @@ io.sockets.on('connection',function(socket){//everything of server side
 		else
 		{
 			callback(true);
-			socket.username = data;
-			usernames.push(socket.username);
+			socket.username = data;//setting the value of variable username which belonged to the index.html file within socket sections
+			// usernames.push(socket.username);
+			usernames.push(data);
 			updateUserNames();
 		}
 	});
@@ -46,5 +47,9 @@ io.sockets.on('connection',function(socket){//everything of server side
 			return;
 		usernames.splice(usernames.indexOf(socket.username),1);
 		updateUserNames();
+	})
+
+	socket.on('clear user',function(){
+		usernames=[];//clear the user array
 	})
 })

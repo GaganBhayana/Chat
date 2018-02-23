@@ -82,6 +82,12 @@
 				height:30px;
 				background: #E5CCFF;
 			}
+			#clear
+			{
+				position:fixed;
+				bottom:10px;
+				right:10px;
+			}
 		</style>
 	</HEAD>	
 	<BODY>
@@ -115,7 +121,10 @@
 				</div>
 			</div>
 		</div>
+		<!-- to clear the user array from last time -->
+		<button id="clear">Remove users from last session</button>
 
+		<!-- <script type="text/javascript" src="onClose.js"></script> -->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
@@ -128,10 +137,16 @@
 				var $users = $('#users');
 				var $username = $('#username');
 				var $error = $('#error');
+				var $clr = $('#clear');
+
+				$clr.on('click',function(){
+					socket.emit('clear user');
+				})
 
 				$usernameForm.submit(function(e){
 					e.preventDefault();
 					socket.emit('new user',$username.val(),function(data){
+						// console.log(data);
 						if(data)
 						{
 							$('#namesWrapper').hide();
@@ -149,7 +164,7 @@
 					var html = "";
 					for(i=0;i<data.length;i++)
 					{
-						html+= '<strong>'+i+1+'. '+data[i]+'<br>'+'<strong>';
+						html+= '<strong>'+(i+1)+'. '+data[i]+'<br>'+'<strong>';
 					}
 					$users.html(html);
 				})
@@ -165,7 +180,14 @@
 					$chat.append('<strong>'+data.user+'</strong> :'+data.msg+'<br>'); //adding a br tag after every message
 					// console.log('hello'+data.message);
 				})
+				window.onbeforeunload = function () {
+					
+					return "Do you really want to close?";
+				};
+				
 			})
+
+			
 		</script>
 	</BODY>
 </HTML>
